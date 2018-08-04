@@ -155,7 +155,7 @@
             if ($loc == "강남") {
               $_bgcol = "#fdf8d6";
             }else{
-              $_bgcol = "ffeeee";
+              $_bgcol = "#ffeeee";
             }
             echo "<td style=\"background : {$_bgcol};\">";
             if ($id != "") {
