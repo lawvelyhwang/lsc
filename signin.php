@@ -113,6 +113,14 @@ transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
               <td><label for="schoolsub">대학원/직장 </label></td>
               <td><input type="text" name="schoolsub"></td>
             </tr>
+            <tr>
+              <td><label for="essaytf">자소서 수강여부 </label></td>
+              <td><select class="form-control" name="essaytf"style="width: 90%; display:inline;">
+              <option>미수강</option>
+              <option>수강</option>
+
+            </select></td>
+            </tr>
             <tr align="center">
               <td colspan="2"><input type="submit" name="submit" style="width:30%;margin-top:20px;"><br></td>
             </tr>

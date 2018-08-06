@@ -27,6 +27,7 @@
       $engIndex = mysqli_real_escape_string($db, $_POST['engIndex']);
       $essayTF = mysqli_real_escape_string($db, $_POST['essayTF']);
       $schoolsub = mysqli_real_escape_string($db, $_POST['schoolsub']);
+      $essaytf = mysqli_real_escape_string($db, $_POST['essaytf']);
 
       $sql = "select * from userdb where id = '".$id."'";
       $result = mysqli_query($db,$sql);
@@ -34,10 +35,10 @@
       if($row['id'] == null){
 
       $sql = "insert into userdb (`id`, `pwd`, `name`, `pnumb`, `age`, `school`,
-       `major`, `gpa`, `gpaidx`, `leeta`, `leetb`, `eng`, `engidx`, `schsub`) values
+       `major`, `gpa`, `gpaidx`, `leeta`, `leetb`, `eng`, `engidx`, `schsub`, `essaytf`) values
        ('{$id}', '{$pwd}', '{$name}', '{$pNumber}', '{$age}',
       '{$school}', '{$major}', {$gpa}, {$gpaIndex}, {$leetApure}, {$leetBpure}, {$eng}, '{$engIndex}'
-      ,'{$schoolsub}')";
+      ,'{$schoolsub}','{$essaytf}')";
       $result = mysqli_query($db,$sql);
       echo $sql;
       header('Location: index.php');}

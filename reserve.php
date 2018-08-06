@@ -46,6 +46,11 @@
   $the_day = date("m-d", time());
 
   echo "서버시간 : {$the_day}<br><br>";
+  $sql = "select * from userdb where id = \"{$_SESSION['login_user']}\";";
+  $result = mysqli_query($db, $sql);
+      $row = mysqli_fetch_assoc($result);
+  if ($row['essaytf']=="수강") {
+
 
     for ($idx=1; $idx <= 7; $idx++) {
       $row = mysqli_fetch_assoc($result);
@@ -89,7 +94,7 @@
           </tr>
           ";
     }
-
+}
      ?>
 
 
