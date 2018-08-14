@@ -42,20 +42,20 @@
     $sql = "select A.week, date, time from (select distinct week from reserve_essay) as A
   left join (select * from reserve_essay where id = \"{$_SESSION['login_user']}\") as B
   on A.week = B.step;";
-  $result = mysqli_query($db, $sql);
+  $result1 = mysqli_query($db, $sql);
   $the_day = date("m-d", time());
 
   echo "서버시간 : {$the_day}<br><br>";
   $sql = "select * from userdb where id = \"{$_SESSION['login_user']}\";";
   $result = mysqli_query($db, $sql);
-      $row = mysqli_fetch_assoc($result);
+  $row = mysqli_fetch_assoc($result);
+
   if ($row['essaytf']=="수강") {
-
-
     for ($idx=1; $idx <= 7; $idx++) {
-      $row = mysqli_fetch_assoc($result);
+      $row = mysqli_fetch_assoc($result1);
       $str_date = substr($row['date'],5);
       $str_time = substr($row['time'],0,5);
+
       echo "<tr>
               <form action=\"reserve_detail.php\" method=\"get\">
               <td>{$idx}회차</td>
@@ -74,9 +74,6 @@
       }else{
         echo "<td><button type=\"submit\" class=\"btn btn-default\">예약</button></td>";
       }
-
-
-
 
       echo "<input type=\"hidden\" name=\"step\" value=\"{$idx}\">
             </form>
@@ -104,7 +101,6 @@
         <br>
         * 자기소개서 예약 변경은 1일 전까지만 가능합니다. <br><br>
         * 첨부 파일은 doc 파일을 권장하고, 하나의 파일로 합쳐서 업로드 해주시기 바랍니다.<br><br>
-
       </td>
     </tr>
 

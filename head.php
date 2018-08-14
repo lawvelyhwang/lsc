@@ -50,7 +50,7 @@
     <div class="navbar-header" style=" display:inline-block; ">
 
       <a class="navbar-brand" href="./main.php">Home</a>
-      <a class="navbar-brand" href="./reserve.php">예약</a>
+      <!--<a class="navbar-brand" href="./reserve.php">예약</a>-->
       <a class="navbar-brand" href="./study.php">스터디</a>
       <!--<a class="navbar-brand" href="./reserve_simul.php">예약</a>-->
       <!--<a class="navbar-brand" href="http://lawvelyhwang.gonetis.com/collect.php">기출문제 입력</a>-->

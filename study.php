@@ -1,6 +1,18 @@
 <?php
   include("head.php");
 ?>
+<div>
+  <form action="studyprocess.php" method="get">
+    <?php
+    echo "
+    <button type=\"submit\" class=\"btn btn-default\"
+    style=\"margin-left: auto; margin-right: auto; display: block;\">신청 해제</button>
+    <input type=\"hidden\" name=\"id\" value=\"{$_SESSION['login_user']}\">
+    <input type=\"hidden\" name=\"index\" value=0>";
+   ?>
+
+  </form>
+</div>
 <div id="columns">
 
   <?php
@@ -40,6 +52,7 @@
 
   }
 ?>
+
 </div>
 
 

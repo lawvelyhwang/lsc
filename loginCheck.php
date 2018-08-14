@@ -32,13 +32,13 @@
     }
     session_start();
     $_SESSION['login_user'] = $user_id;
-    $sql = "select * from userprogress where id = '".$user_id."'";
-    $result = mysqli_query($db, $sql);
-    $row = mysqli_fetch_assoc($result);
+  #  $sql = "select * from userprogress where id = '".$user_id."'";
+#    $result = mysqli_query($db, $sql);
+#    $row = mysqli_fetch_assoc($result);
 
-    $sql = "insert into login (`id`) values({$_SESSION['login_user']});";
+    $sql = "insert into login (`id`) values(\"{$_SESSION['login_user']}\");";
     $result = mysqli_query($db, $sql);
-    
+
     $_SESSION['nowW']= $row['nowW'];
 
     ?>
