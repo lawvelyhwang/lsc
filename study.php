@@ -16,8 +16,8 @@
 <div id="columns">
 
   <?php
-  $img = array('','./img/sc01.png', './img/sc02.png', './img/gn01.png',
-              './img/gn02.png', './img/gn03.png', './img/gn04.png', './img/gn05.png', './img/gn06.png', './img/gn07.png');
+  $img = array('','./img/sc01.png', './img/sc02.png', './img/sc03.png', './img/sc04.png', './img/gn01.png',
+              './img/gn02.png', './img/gn03.png', './img/gn04.png', './img/gn05.png');
   $startday = array('','9/18', '9/18', '9/18',
                     '9/18', '9/19', '9/19', '9/19', '9/23', '9/23');
   $sche = array('','월 수', '월 수', '월 수',
