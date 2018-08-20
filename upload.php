@@ -54,12 +54,13 @@ if(empty($_FILES['upfile']['name'])){
 	exit;
 }
 
-echo $_FILES['upfile']['name']."<br>";
-echo $_FILES['upfile']['type']."<br>";
-echo $_FILES['upfile']['size']."<br>";
-echo $_FILES['upfile']['tmp_name']."<br>";
-echo $_FILES['upfile']['error']."<br>";
+#echo $_FILES['upfile']['name']."<br>";
+#echo $_FILES['upfile']['type']."<br>";
+#echo $_FILES['upfile']['size']."<br>";
+#echo $_FILES['upfile']['tmp_name']."<br>";
+#echo $_FILES['upfile']['error']."<br>";
 
+echo "파일을 업로드 중 입니다.";
 
 // 파일 이동
 move_uploaded_file( $_FILES['upfile']['tmp_name'], $uploads_dir.$_POST['date']."-".$_SESSION['login_user']."-".$_POST['step'].".".$ext);

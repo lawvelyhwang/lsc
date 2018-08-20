@@ -28,6 +28,16 @@
   <br>
 
   <table class="table" style="width: 80%; text-align: center">
+    <!-- 참고사항 -->
+    <tr>
+      <td colspan=4>
+        <br>
+        * 자기소개서 예약 변경은 1일 전까지만 가능합니다. <br><br>
+        * 첨부 파일은 doc 파일을 권장하고, 하나의 파일로 합쳐서 업로드 해주시기 바랍니다.<br><br>
+      </td>
+    </tr>
+
+
     <tr>
       <td>주차</td>
 
@@ -65,6 +75,7 @@ date_default_timezone_set('Asia/Seoul');
 
 echo "<br>";
   echo "서버시간 : ".date("Y-m-d H:i:s", time())."<br><br>";
+
   $sql = "select * from userdb where id = \"{$_SESSION['login_user']}\";";
   $result = mysqli_query($db, $sql);
   $row = mysqli_fetch_assoc($result);
@@ -104,7 +115,16 @@ echo "<br>";
               <input type=\"hidden\" name = \"date\" value = \"{$str_date}\">
               <input type=\"hidden\" name = \"step\" value=\"{$idx}\">
               <button style=\"margin-left: 10px\" class=\"btn btn-default\">제출</button>
-            </form>";
+            </form><br>";
+
+      $file_name_hwp = './uploads/files/'.$str_date.'-'.$_SESSION['login_user'].'-'.$idx.'.hwp';
+      $file_name_doc = './uploads/files/'.$str_date.'-'.$_SESSION['login_user'].'-'.$idx.'.doc';
+      $file_name_pdf = './uploads/files/'.$str_date.'-'.$_SESSION['login_user'].'-'.$idx.'.pdf';
+      if (file_exists($file_name_hwp) or file_exists($file_name_doc) or file_exists($file_name_pdf)) {
+        echo "업로드 완료";
+      }else {
+        echo "-----";
+      }
 
       echo "</td>
           </tr>
@@ -113,15 +133,6 @@ echo "<br>";
 }
      ?>
 
-
-    <!-- 참고사항 -->
-    <tr>
-      <td colspan=4>
-        <br>
-        * 자기소개서 예약 변경은 1일 전까지만 가능합니다. <br><br>
-        * 첨부 파일은 doc 파일을 권장하고, 하나의 파일로 합쳐서 업로드 해주시기 바랍니다.<br><br>
-      </td>
-    </tr>
 
 
 
