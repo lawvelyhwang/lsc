@@ -61,10 +61,10 @@
         <option value="1">1주차 - 8/20 ~ 8/26</option>
         <option value="2">2주차 - 8/27 ~ 9/02</option>
         <option value="3">3주차 - 9/03 ~ 9/09</option>
-        <option value="4">4주차 - 9/10 ~ 9/16</option>
+        <!--<option value="4">4주차 - 9/10 ~ 9/16</option>
         <option value="5">5주차 - 9/17 ~ 9/23</option>
         <option value="6">6주차 - 9/24 ~ 9/30</option>
-        <option value="7">7주차 - 10/1 ~ 10/5</option>
+        <option value="7">7주차 - 10/1 ~ 10/5</option>-->
       </select>
       <?php
         echo "<input type=\"hidden\" name=\"step\" value=\"{$_GET['step']}\">";

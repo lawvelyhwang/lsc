@@ -26,8 +26,7 @@
 <div class="" align="center">
   <h2>자기소개서 예약 페이지</h2>
   <br>
-  * reserve.csv 파일에 강의 위치 일정 넣고 업로드 할 것.
-  * 파일 제출 부분 만들어야함.
+
   <table class="table" style="width: 80%; text-align: center">
     <tr>
       <td>주차</td>
@@ -42,10 +41,30 @@
     $sql = "select A.week, date, time from (select distinct week from reserve_essay) as A
   left join (select * from reserve_essay where id = \"{$_SESSION['login_user']}\") as B
   on A.week = B.step;";
+date_default_timezone_set('Asia/Seoul');
   $result1 = mysqli_query($db, $sql);
   $the_day = date("m-d", time());
 
-  echo "서버시간 : {$the_day}<br><br>";
+
+// echo "<br>";
+// echo $the1_day; echo " and ".date("Y-m-d H:i:s", time())."<br>";
+// echo $com1_day." and ".date("Y-m-d H:i:s", mktime(12,58,0, 8,18, 2018))."<br>";
+// echo "<br>";
+// if ($the1_day >= $com1_day) {
+//   echo "시간임??11?? 53<br>";
+//
+// }
+// else {
+//   echo "아직임1-<br>";
+//   $t = $the1_day - $com1_day;
+//   echo $t;
+// }
+// echo date("Y-m-d H:i:s", time());
+// $the1_day = strtotime(date("Y-m-d H:i:s", time()));
+// $com1_day = strtotime(date("Y-m-d H:i:s", mktime(12,58,0, 8,18, 2018)));
+
+echo "<br>";
+  echo "서버시간 : ".date("Y-m-d H:i:s", time())."<br><br>";
   $sql = "select * from userdb where id = \"{$_SESSION['login_user']}\";";
   $result = mysqli_query($db, $sql);
   $row = mysqli_fetch_assoc($result);

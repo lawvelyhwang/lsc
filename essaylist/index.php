@@ -8,15 +8,16 @@
       </div>
 <ul data-role="listview" data-inset="true">
       <?php
+      date_default_timezone_set('Asia/Seoul');
       $one_day = 86400;
 
-      for($i = 0; $i<7; $i++){
-        $date = date("m-d", time() + $one_day *(42+ $i));
+      for($i = 0; $i<31; $i++){
+        $date = date("m-d", time() + $one_day *($i));
         $t_month = substr($date, 0,2);
         $t_day = substr($date, 3);
         $sql = "select count(*) as cnt from reserve_essay
         where date = str_to_date('2018-{$t_month}-{$t_day}', '%Y-%m-%d')
-        and id <> \"\";";
+        and id not in (\"-\",\"\",\"수업\",\"아침수업\",\"저녁수업\");";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_assoc($result);
 

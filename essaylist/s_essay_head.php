@@ -25,3 +25,4 @@ require("../config.php");
 
         <h1 style="font-size: larger;">Lawvely Hwang</h1>
     </div><!-- /header -->
+<?php date_default_timezone_set('Asia/Seoul'); ?>

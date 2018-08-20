@@ -50,6 +50,20 @@
     <div class="navbar-header" style=" display:inline-block; ">
 
       <a class="navbar-brand" href="./main.php">Home</a>
+      <?php
+        date_default_timezone_set('Asia/Seoul');
+        $the1_day = strtotime(date("Y-m-d H:i:s", time()));
+        $com1_day = strtotime(date("Y-m-d H:i:s", mktime(10,0,0, 8,19, 2018))); #열릴 시간
+        if ($the1_day >= $com1_day) {
+        echo "<a class=\"navbar-brand\" href=\"./reserve.php\">예약</a>";
+        }
+        else {
+          // echo "아직임1-<br>";
+          // $t = $the1_day - $com1_day;
+          // echo $t;
+        }
+
+       ?>
       <!--<a class="navbar-brand" href="./reserve.php">예약</a>-->
       <a class="navbar-brand" href="./study.php">스터디</a>
       <!--<a class="navbar-brand" href="./reserve_simul.php">예약</a>-->
