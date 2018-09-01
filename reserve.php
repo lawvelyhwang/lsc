@@ -81,7 +81,7 @@ echo "<br>";
   $row = mysqli_fetch_assoc($result);
 
   if ($row['essaytf']=="수강") {
-    for ($idx=1; $idx <= 7; $idx++) {
+    for ($idx=1; $idx < 7; $idx++) {
       $row = mysqli_fetch_assoc($result1);
       $str_date = substr($row['date'],5);
       $str_time = substr($row['time'],0,5);
@@ -119,8 +119,9 @@ echo "<br>";
 
       $file_name_hwp = './uploads/files/'.$str_date.'-'.$_SESSION['login_user'].'-'.$idx.'.hwp';
       $file_name_doc = './uploads/files/'.$str_date.'-'.$_SESSION['login_user'].'-'.$idx.'.doc';
+      $file_name_docx = './uploads/files/'.$str_date.'-'.$_SESSION['login_user'].'-'.$idx.'.docx';
       $file_name_pdf = './uploads/files/'.$str_date.'-'.$_SESSION['login_user'].'-'.$idx.'.pdf';
-      if (file_exists($file_name_hwp) or file_exists($file_name_doc) or file_exists($file_name_pdf)) {
+      if (file_exists($file_name_hwp) or file_exists($file_name_doc) or file_exists($file_name_pdf) or file_exists($file_name_docx)) {
         echo "업로드 완료";
       }else {
         echo "-----";
