@@ -20,7 +20,7 @@
       $result = mysqli_query($db,$sql);
       while ($row = mysqli_fetch_assoc($result)) {
         $str_time = substr($row['time'],0,5);
-        echo "<li><a href=\"studentdb.php?id={$row['id']}\">{$str_time} : {$row['name']} - {$row['step']}회차</a></li>";
+        echo "<li><a href=\"studentdb.php?id={$row['id']}\">{$str_time} : {$row['name']}</a></li>";
       }
       ?>
 
