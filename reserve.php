@@ -159,6 +159,37 @@ echo "<br>";
 
         echo "<td>-</td>";
         echo "</tr>";
+
+        #외부 변호사
+        echo "<tr><form action=\"reserve_detail_ano.php\" method=\"get\">";
+        echo "<td>";
+          echo "외부 경력<br>변호사";
+        echo "</td>";
+
+        $sql = "select * from reserve_essay_ano where id = \"{$_SESSION['login_user']}\";";
+        $result_jdj = mysqli_query($db, $sql);
+        $row = mysqli_fetch_assoc($result_jdj);
+        $str_date = substr($row['date'],5);
+        $str_time = substr($row['time'],0,5);
+
+        echo "<td>{$str_date} / {$str_time}</td>";
+
+        $t_month = substr($str_date, 0,2);
+        $t_day = substr($str_date, 3);
+        $new_day = date("m-d", mktime(0,0,0, $t_month, $t_day, 2018));
+
+        # 이부분 해제 하면 나타남
+        echo "<td>오픈 예정</td>";
+        if ($the_day >= $new_day) {
+          #echo "<td>변경불가</td>";
+        }else{
+          #echo "<td><button type=\"submit\" class=\"btn btn-default\">예약</button></td>";
+        }
+        echo "<input type=\"hidden\" name=\"step\" value=\"{$idx}\">
+              </form>";
+
+        echo "<td>-</td>";
+        echo "</tr>";
   }
      ?>
 
