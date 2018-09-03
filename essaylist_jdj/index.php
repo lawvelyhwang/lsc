@@ -20,8 +20,10 @@
         and id not in (\"-\",\"\",\"수업\",\"아침수업\",\"저녁수업\");";
         $result = mysqli_query($db,$sql);
         $row = mysqli_fetch_assoc($result);
+        if ($row['cnt'] > 0) {
+          echo "<li><a href=\"date.php?date={$date}\">{$date} : {$row['cnt']} 명</a></li>";}
+        }
 
-        echo "<li><a href=\"date.php?date={$date}\">{$date} : {$row['cnt']} 명</a></li>";}
       ?>
 
 
