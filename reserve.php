@@ -131,7 +131,7 @@ echo "<br>";
           </tr>
           ";
         }
-
+        echo "<tr></tr>";
         echo "<tr><form action=\"reserve_detail_jdj.php\" method=\"get\">";
         echo "<td>";
           echo "정동주 변호사";
@@ -168,7 +168,7 @@ echo "<br>";
   </table>
 
 </div>
-
+<br><br><br><br><br>
 
 <?php
   include("foot.php");
