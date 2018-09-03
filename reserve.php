@@ -81,7 +81,7 @@ echo "<br>";
   $row = mysqli_fetch_assoc($result);
 
   if ($row['essaytf']=="수강") {
-    for ($idx=1; $idx < 7; $idx++) {
+    for ($idx=1; $idx < 6; $idx++) {
       $row = mysqli_fetch_assoc($result1);
       $str_date = substr($row['date'],5);
       $str_time = substr($row['time'],0,5);
