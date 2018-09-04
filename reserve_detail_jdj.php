@@ -20,16 +20,18 @@
       <td>9/10(월)</td>
       <td>9/15(토)</td>
       <td>9/17(월)</td>
-      <td>9/22(토)</td>
+      <td>9/19(수)</td>
+      <td>9/21(금)</td>
     </tr>
     <?php
       $sql = "select a.time as time, a.id as id_1, a.loc as loc_1, b.id as id_2, b.loc as loc_2,
-  c.id as id_3, c.loc as loc_3, d.id as id_4, d.loc as loc_4, e.id as id_5, e.loc as loc_5
+  c.id as id_3, c.loc as loc_3, d.id as id_4, d.loc as loc_4, e.id as id_5, e.loc as loc_5, f.id as id_6, f.loc as loc_6
     from (select * from reserve_essay_jdj where week = 1 and day = 1) as a
   left join (select * from reserve_essay_jdj where week = 1 and day = 2) as b on a.time = b.time
   left join (select * from reserve_essay_jdj where week = 1 and day = 3) as c on a.time = c.time
   left join (select * from reserve_essay_jdj where week = 1 and day = 4) as d on a.time = d.time
-  left join (select * from reserve_essay_jdj where week = 1 and day = 5) as e on a.time = e.time;";
+  left join (select * from reserve_essay_jdj where week = 1 and day = 5) as e on a.time = e.time
+  left join (select * from reserve_essay_jdj where week = 1 and day = 6) as f on f.time = f.time;";
       $result = mysqli_query($db, $sql);
 
 
@@ -61,6 +63,10 @@
               case 5:
                 $loc = $row['loc_5'];
                 $id = $row['id_5'];
+                break;
+              case 6:
+                $loc = $row['loc_6'];
+                $id = $row['id_6'];
                 break;
               }
 
