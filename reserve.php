@@ -149,6 +149,9 @@ echo "<br>";
         $t_day = substr($str_date, 3);
         $new_day = date("m-d", mktime(0,0,0, $t_month, $t_day, 2018));
 
+        # 이부분 해제 하면 나타남
+        #echo "<td>오픈 예정</td>";
+
         if ($the_day >= $new_day) {
           echo "<td>변경불가</td>";
         }else{

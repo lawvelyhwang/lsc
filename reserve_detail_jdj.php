@@ -31,7 +31,7 @@
   left join (select * from reserve_essay_jdj where week = 1 and day = 3) as c on a.time = c.time
   left join (select * from reserve_essay_jdj where week = 1 and day = 4) as d on a.time = d.time
   left join (select * from reserve_essay_jdj where week = 1 and day = 5) as e on a.time = e.time
-  left join (select * from reserve_essay_jdj where week = 1 and day = 6) as f on f.time = f.time;";
+  left join (select * from reserve_essay_jdj where week = 1 and day = 6) as f on a.time = f.time;";
       $result = mysqli_query($db, $sql);
 
 
@@ -40,7 +40,7 @@
           # 시간 채우기
           echo "<td>{$row['time']}</td>";
           # 요일 채우기
-          for ($i=1; $i <= 5 ; $i++) {
+          for ($i=1; $i <= 6 ; $i++) {
             $loc = "";
             $id = "";
             switch ($i) {
